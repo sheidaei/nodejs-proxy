@@ -2,7 +2,7 @@ var http = require('http');
 var port = process.env.PORT || 8080;
 
 http.createServer(function(request, response) {
-  var proxy = http.createClient(80, request.headers['host'])
+  var proxy = http.request(80, request.headers['host'])
   var proxy_request = proxy.request(request.method, request.url, request.headers);
   proxy_request.addListener('response', function (proxy_response) {
     proxy_response.addListener('data', function(chunk) {
