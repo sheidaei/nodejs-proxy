@@ -7,14 +7,15 @@
 */
 
 var fs = require('fs');
+var port = process.env.PORT || 80;
 
 var config = {
   add_proxy_header: true,//activate addition of X-Forwarded-For header for better logging on real server side
   allow_ip_list: './config/allow_ip_list',
   black_list:    './config/black_list',
   host_filters:   './config/hostfilters.js',
-  listen:[{ip:'0.0.0.0', port:80},//all ipv4 interfaces
-          {ip:'::', port:80}],//all ipv6 interfaces
+  listen:[{ip:'0.0.0.0', port},//all ipv4 interfaces
+          {ip:'::', port}],//all ipv6 interfaces
   listen_ssl:[{
               ip:'0.0.0.0',//all *secure* ipv4 interfaces
               port:443,
