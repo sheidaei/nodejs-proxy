@@ -2,23 +2,17 @@
     "name": "nodejs-proxy",
     "version": "1.0.0",
     "description": "Simple HTTP proxy for node.js",
-    "author": {
-        "name": "Peteris Krumins",
-        "email": "peteris.krumins@gmail.com",
-        "web": "http://www.catonmat.net",
-        "twitter": "pkrumins"
-    }, 
-    "license": {
-        "type": "MIT"
-    }, 
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
     "repository": {
         "type": "git",
         "url": "git@github.com:pkrumins/nodejs-proxy.git"
     }, 
     "dependencies": {
     "express": "latest",
-    "pg": "6.1.2",
-    "pug": "^2.0.0-beta6",
     "require": "latest"
   }
 }
